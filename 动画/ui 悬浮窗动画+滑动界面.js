@@ -427,61 +427,6 @@ function 退场动画(){
     显示.setStartDelay(time);
     显示.setDuration(700);
     time+=700
-    //过渡_0
-    圆X1=ObjectAnimator.ofFloat(win.关闭_bg_1, "scaleX",0, 1)
-    圆Y1 = ObjectAnimator.ofFloat(win.关闭_bg_1, "scaleY",0, 1)
-    旋转1 = ObjectAnimator.ofFloat(B, "rotation", 180, 0)
-    过渡=new AnimatorSet();
-    过渡.playTogether(圆X1,圆Y1,旋转1)
-    过渡.setStartDelay(time);
-    过渡.setDuration(500);
-    time+=500
-        //转换
-        替身圆翻转  =ObjectAnimator.ofFloat(B, "scaleX",1, 0)
-        圆显示_1 = ObjectAnimator.ofFloat(B, "alpha", 1,1)
-        转换=new AnimatorSet();
-        转换.playTogether(替身圆翻转,圆显示_1)
-        转换.setStartDelay(time);
-        转换.setDuration(250);
-        time+=250
-        圆显示_0 = ObjectAnimator.ofFloat(B, "alpha", 0,0)
-        圆显示_2 = ObjectAnimator.ofFloat(A, "alpha", 1,1)
-        圆翻转 = ObjectAnimator.ofFloat(A, "scaleX", 0,1)
-        转换1=new AnimatorSet();
-        转换1.playTogether(圆翻转,圆显示_0,圆显示_2)
-        转换1.setStartDelay(time);
-        转换1.setDuration(250);
-        time+=1000
-
-
-    //退场
-    animator = ObjectAnimator.ofFloat(A, "translationX", 0, w);
-  mTimeInterpolator = new AnticipateInterpolator();
-  animator.setInterpolator(mTimeInterpolator);
-  animator.setStartDelay(time);
-  animator.setDuration(500);
-  time+=500
-  animator.start();
-  /*
-    圆进场 = ObjectAnimator.ofFloat(A, "translationX",0, w-A.getLeft());
-    圆显示 = ObjectAnimator.ofFloat(A, "alpha", 1,1)
-    圆滚动 = ObjectAnimator.ofFloat(A, "rotation", 0, 360)
-    set = new AnimatorSet();
-    set.playTogether(圆进场,圆显示,圆滚动)
-    set.setStartDelay(time);
-    set.setDuration(1000);
-*/
-    //结束
-   // set.start()//1
-    转换1.start()//2
-    转换.start()//3
-    过渡.start()//4
-    显示.start()//5
-    threads.start(function(){
-        sleep(time+500)
-        exit()
-    })
-}
 
 
 function 界面判定() {//正常滑动时判定下一个界面
